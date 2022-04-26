@@ -94,9 +94,9 @@ const done = () => {
           >
           <p class="line-break q-mt-sm">
             {{
-              $tc('welcome.welcome.message', [
-                session.user.full_name.split(' ')[0]
-              ])
+              `${$t('hello')} ${session.user.full_name.split(' ')[0]}, ${$t(
+                'welcome.welcome.message'
+              )}`
             }}
           </p>
         </div>
@@ -215,7 +215,7 @@ const done = () => {
         </h5>
 
         <p class="text-center scroll">
-          {{ $tc('welcome.native.description', [native_os.name]) }}
+          {{ $t('welcome.native.description') }} {{ native_os.name }}.
           <br />
           {{ $t('welcome.native.description2') }}
           <br />
@@ -226,8 +226,8 @@ const done = () => {
           <q-btn
             :label="
               native_os.ext === 'PWA'
-                ? $tc('welcome.native.install', [native_os.ext])
-                : $tc('welcome.native.download', [native_os.ext])
+                ? `${$t('welcome.native.install')} ${native_os.ext}`
+                : `${$t('welcome.native.download')} ${native_os.ext}`
             "
             no-caps
             outline

@@ -11,7 +11,7 @@ export default {
   welcome: {
     welcome: {
       message:
-        'Olá {0}, bem-vindo(a) ao Bolt.\nVamos definir algumas preferências para começar.',
+        'bem-vindo(a) ao Bolt.\nVamos definir algumas preferências para começar.',
       start: 'Iniciar'
     },
     language: 'Escolha o seu idioma:',
@@ -24,13 +24,13 @@ export default {
     },
     native: {
       title: 'Instalação disponível:',
-      description: 'Detetámos uma versão instalável para o seu sistema: {0}.',
+      description: 'Detetámos uma versão instalável para o seu sistema:',
       description2:
         'A instalação é totalmente opcional mas poderá proporcionar uma experiência superior em alguns casos.',
       description3:
         'Talvez seja necessário ativar a instalação de origens desconhecidas no seu dispositivo.',
-      install: 'Instalar {0}',
-      download: 'Descarregar {0}'
+      install: 'Instalar',
+      download: 'Descarregar'
     },
     ng: {
       thanks: 'Obrigado por experimentar o Bolt!',
@@ -74,5 +74,6 @@ export default {
     title: 'Eliminar bolt',
     message: 'Tem a certeza que deseja eliminar este bolt?'
   },
+  hello: 'Olá',
   and: 'e'
 }

@@ -10,8 +10,7 @@ export default {
   },
   welcome: {
     welcome: {
-      message:
-        "Hi {0}, welcome to Bolt.\nLet's set some preferences to get started.",
+      message: "welcome to Bolt.\nLet's set some preferences to get started.",
       start: 'Get Started'
     },
     language: 'Pick your language:',
@@ -24,14 +23,13 @@ export default {
     },
     native: {
       title: 'Installation available:',
-      description:
-        'We have detected an installable version for your system: {0}.',
+      description: 'We have detected an installable version for your system:',
       description2:
         'Installing is totally optional but may provide a better experience in some cases.',
       description3:
         'You may have to enable installation from unknown sources in your device.',
-      install: 'Install {0}',
-      download: 'Download {0}'
+      install: 'Install',
+      download: 'Download'
     },
     ng: {
       thanks: 'Thanks for checking out Bolt!',
@@ -75,5 +73,6 @@ export default {
     title: 'Delete bolt',
     message: 'Are you sure you wish to delete this bolt?'
   },
+  hello: 'Hi',
   and: 'and'
 }
