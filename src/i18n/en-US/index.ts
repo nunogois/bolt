@@ -60,6 +60,7 @@ export default {
     }
   },
   action: {
+    open: 'Open',
     reply: 'Reply',
     rebolt: 'Rebolt',
     like: 'Like',

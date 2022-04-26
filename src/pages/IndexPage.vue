@@ -40,7 +40,10 @@ const addBolt = async () => {
       avatar_url
     )`)
   handleError(error)
-  bolts.value = [data?.[0] as Bolt, ...bolts.value]
+  if (!error) {
+    newBoltMessage.value = ''
+    bolts.value = [data?.[0] as Bolt, ...bolts.value]
+  }
 }
 
 const deleteBolt = async (id: string) => {
@@ -97,7 +100,7 @@ const load = async (pageNumber: number, done: (stop: boolean) => void) => {
         <transition-group
           appear
           enter-active-class="animated fadeInDown slow"
-          leave-active-class="animated fadeOutRight slow"
+          leave-active-class="animated fadeOutUp slow"
         >
           <bolt
             v-for="bolt in bolts"
@@ -122,6 +125,12 @@ const load = async (pageNumber: number, done: (stop: boolean) => void) => {
             maxlength="280"
             autofocus
             counter
+            @keyup.ctrl.enter="
+              () => {
+                newBolt = false
+                addBolt()
+              }
+            "
           >
             <template v-slot:before>
               <q-avatar size="xl">

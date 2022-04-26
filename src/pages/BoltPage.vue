@@ -97,7 +97,7 @@ const load = async (pageNumber: number, done: (stop: boolean) => void) => {
       <transition
         appear
         enter-active-class="animated fadeInDown slow"
-        leave-active-class="animated fadeOutRight slow"
+        leave-active-class="animated fadeOutUp slow"
       >
         <q-card
           v-if="bolt"
@@ -106,7 +106,7 @@ const load = async (pageNumber: number, done: (stop: boolean) => void) => {
           flat
           bordered
         >
-          <bolt :bolt="bolt" @delete="deleteBolt" />
+          <bolt self :bolt="bolt" @delete="deleteBolt" />
         </q-card>
       </transition>
     </div>
@@ -120,7 +120,7 @@ const load = async (pageNumber: number, done: (stop: boolean) => void) => {
         <transition-group
           appear
           enter-active-class="animated fadeInUp slow"
-          leave-active-class="animated fadeOutRight slow"
+          leave-active-class="animated fadeOutUp slow"
         >
           <bolt
             v-for="bolt in bolts"

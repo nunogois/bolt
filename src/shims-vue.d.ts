@@ -10,3 +10,6 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+// Does not support TS yet
+declare module 'vue3-markdown-it'

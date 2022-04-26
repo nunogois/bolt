@@ -61,6 +61,7 @@ export default {
     }
   },
   action: {
+    open: 'Abrir',
     reply: 'Responder',
     rebolt: 'Rebolt',
     like: 'Gostar',

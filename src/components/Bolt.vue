@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useQuasar, copyToClipboard } from 'quasar'
 import { useSession } from 'stores/session'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useFlag } from '@unleash/proxy-client-vue'
+import Markdown from 'vue3-markdown-it'
+import 'highlight.js/styles/atom-one-dark.css'
 
 const $q = useQuasar()
 const session = useSession()
@@ -18,6 +20,7 @@ const flagDelete = useFlag('bolt.delete')
 
 const props = defineProps<{
   bolt: Bolt
+  self?: boolean
 }>()
 
 const emit = defineEmits<{
@@ -29,10 +32,22 @@ const share = (bolt: Bolt) => {
   $q.notify(t('action.clipboard'))
 }
 
+const message = computed(() => {
+  let message = props.bolt.message
+  message
+    .match(/(\s|\A)@\w+/gi)
+    ?.map((match) => match.trim())
+    .forEach((match) => {
+      message = message.replaceAll(match, `[${match}](/u/${match.slice(1)})`)
+    })
+
+  return message
+})
+
 const confirmDelete = ref(false)
 
-const toggleLike = () => {
-  console.log('TODO: implement')
+const todoImplement = () => {
+  $q.notify('TODO: implement')
 }
 </script>
 
@@ -73,14 +88,29 @@ const toggleLike = () => {
           </span>
         </div>
       </q-item-label>
-      <q-item-label
-        class="bolt-content text-body1 q-pt-xs cursor-pointer"
-        @click="router.push(`/b/${props.bolt.id}`)"
-        >{{ props.bolt.message }}</q-item-label
-      >
+      <q-item-label class="bolt-content text-body1 q-pt-xs"
+        ><markdown linkify :source="message"
+      /></q-item-label>
       <div class="bolt-icons row q-mt-sm">
         <q-btn
+          v-if="!self"
+          @click="router.push(`/b/${props.bolt.id}`)"
+          color="grey"
+          icon="fas fa-magnifying-glass"
+          size="sm"
+          flat
+          round
+          ><q-tooltip class="bg-black">{{
+            $t('action.open')
+          }}</q-tooltip></q-btn
+        >
+        <q-btn
           v-if="flagReply"
+          @click="
+            () => {
+              todoImplement(props.bolt)
+            }
+          "
           color="grey"
           icon="far fa-comment"
           size="sm"
@@ -92,6 +122,11 @@ const toggleLike = () => {
         >
         <q-btn
           v-if="flagRebolt"
+          @click="
+            () => {
+              todoImplement(props.bolt)
+            }
+          "
           color="grey"
           icon="fas fa-retweet"
           size="sm"
@@ -104,7 +139,7 @@ const toggleLike = () => {
           v-if="flagLike"
           @click="
             () => {
-              toggleLike(props.bolt)
+              todoImplement(props.bolt)
             }
           "
           :color="props.bolt.liked ? 'pink' : 'grey'"
@@ -161,15 +196,18 @@ const toggleLike = () => {
   </q-item>
 </template>
 
-<style scoped lang="sass">
+<style lang="sass">
 .bolt:not(:first-child)
   border-top: 1px solid $separator-color
 .body--dark
   .bolt:not(:first-child)
     border-top: 1px solid $separator-dark-color
 .bolt-content
-  white-space: pre-line
-  text-align: justify
+  p
+    margin: 0
+  a
+    text-decoration: none
+    color: #2c8aff
 .bolt-icons
   margin-left: -5px
   gap: 10px
