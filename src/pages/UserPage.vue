@@ -57,6 +57,7 @@ const addBolt = async () => {
     message,
     created_at,
     profiles:user_id (
+      id
       full_name,
       user_name,
       avatar_url
@@ -88,7 +89,7 @@ const load = async (pageNumber: number, done: (stop: boolean) => void) => {
     id,
     message,
     created_at,
-    profiles:user_id (
+    profiles:user_id!inner (
       id,
       full_name,
       user_name,
