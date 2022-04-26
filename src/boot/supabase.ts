@@ -26,7 +26,7 @@ export default boot(({ router, redirect }) => {
             id,
             email,
             avatar_url,
-            full_name,
+            full_name: full_name ?? user_name,
             updated_at,
             user_name,
             preferences
