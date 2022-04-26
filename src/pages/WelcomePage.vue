@@ -76,6 +76,7 @@ const done = () => {
       transition-next="slide-left"
       swipeable
       animated
+      :control-color="$q.dark.isActive ? 'white' : 'black'"
       navigation
       padding
       arrows
