@@ -15,7 +15,6 @@
     "@quasar/extras": "^1.0.0",
     "@supabase/supabase-js": "^1.35.1",
     "@unleash/proxy-client-vue": "^0.0.1",
-    "axios": "^0.21.1",
     "lottie-web": "^5.9.3",
     "pinia": "^2.0.11",
     "quasar": "^2.6.0",
