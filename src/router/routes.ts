@@ -19,7 +19,8 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: 'u/:id', component: () => import('pages/UserPage.vue') },
-      { path: 'b/:id', component: () => import('pages/BoltPage.vue') }
+      { path: 'b/:id', component: () => import('pages/BoltPage.vue') },
+      { path: 'status', component: () => import('pages/StatusPage.vue') }
     ]
   },
 

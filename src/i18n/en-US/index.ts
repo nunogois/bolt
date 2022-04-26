@@ -49,11 +49,19 @@ export default {
     next: 'Next',
     skip: 'Skip'
   },
+  status: {
+    title: 'Feature Management powered by:',
+    feature: 'Feature',
+    variant: 'Variant',
+    toggle: 'Toggle'
+  },
   drawer: {
     logout: 'Sign Out',
+    status: 'Features Status',
     caption: {
       theme: 'Light or dark theme.',
       beta: 'Help test experimental features.',
+      status: 'Check the currently activated features.',
       github: 'Check out this project on GitHub!',
       website: 'Check out my website!',
       logout: 'Hope to see you again soon.'

@@ -50,11 +50,19 @@ export default {
     next: 'Próximo',
     skip: 'Ignorar'
   },
+  status: {
+    title: 'Gestão de Funcionalidades graças a:',
+    feature: 'Funcionalidade',
+    variant: 'Variante',
+    toggle: 'Ativada'
+  },
   drawer: {
     logout: 'Sair',
+    status: 'Estado das Funcionalidades',
     caption: {
       theme: 'Tema claro ou escuro.',
       beta: 'Ajude a testar funcionalidades experimentais.',
+      status: 'Consulte as funcionalidades ativadas.',
       github: 'Consulte o projeto no GitHub!',
       website: 'Visite o meu website!',
       logout: 'Esperamos que volte em breve.'

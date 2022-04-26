@@ -88,6 +88,20 @@ const logout = () => {
 
         <q-separator />
 
+        <q-item clickable to="/status">
+          <q-item-section avatar>
+            <q-icon name="fas fa-sliders" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{ $t('drawer.status') }}</q-item-label>
+            <q-item-label caption>
+              {{ $t('drawer.caption.status') }}
+            </q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-separator />
+
         <q-item
           clickable
           tag="a"
