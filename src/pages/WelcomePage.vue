@@ -5,12 +5,10 @@ import { useSession } from 'stores/session'
 import { useRouter } from 'vue-router'
 import lottie from 'components/Lottie.vue'
 import LanguagePicker from 'components/LanguagePicker.vue'
-import { useI18n } from 'vue-i18n'
 
 const $q = useQuasar()
 const session = useSession()
 const router = useRouter()
-const { t } = useI18n()
 
 const slide = ref('welcome')
 const pwa_install = ref<PWAInstallPrompt>()
@@ -96,9 +94,9 @@ const done = () => {
           >
           <p class="line-break q-mt-sm">
             {{
-              t('welcome.welcome.message', [
-                session.user.full_name.split(' ')[0]
-              ])
+              $t('welcome.welcome.message', {
+                n: session.user.full_name.split(' ')[0]
+              })
             }}
           </p>
         </div>
@@ -217,7 +215,7 @@ const done = () => {
         </h5>
 
         <p class="text-center scroll">
-          {{ t('welcome.native.description', [native_os.name]) }}
+          {{ $t('welcome.native.description', { n: native_os.name }) }}
           <br />
           {{ $t('welcome.native.description2') }}
           <br />
@@ -228,8 +226,8 @@ const done = () => {
           <q-btn
             :label="
               native_os.ext === 'PWA'
-                ? t('welcome.native.install', [native_os.ext])
-                : t('welcome.native.download', [native_os.ext])
+                ? $t('welcome.native.install', { n: native_os.ext })
+                : $t('welcome.native.download', { n: native_os.ext })
             "
             no-caps
             outline

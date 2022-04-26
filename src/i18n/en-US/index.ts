@@ -11,7 +11,7 @@ export default {
   welcome: {
     welcome: {
       message:
-        "Hi {0}, welcome to Bolt.\nLet's set some preferences to get started.",
+        "Hi {n}, welcome to Bolt.\nLet's set some preferences to get started.",
       start: 'Get Started'
     },
     language: 'Pick your language:',
@@ -25,13 +25,13 @@ export default {
     native: {
       title: 'Installation available:',
       description:
-        'We have detected an installable version for your system: {0}.',
+        'We have detected an installable version for your system: {n}.',
       description2:
         'Installing is totally optional but may provide a better experience in some cases.',
       description3:
         'You may have to enable installation from unknown sources in your device.',
-      install: 'Install {0}',
-      download: 'Download {0}'
+      install: 'Install {n}',
+      download: 'Download {n}'
     },
     ng: {
       thanks: 'Thanks for checking out Bolt!',
