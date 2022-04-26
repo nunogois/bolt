@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://bolt.vercel.app"><img src="https://github.com/nunogois/bolt/blob/master/public/images/thumbnail.png?raw=true" height="450" /></a>
+  <a href="https://bolt-dev.vercel.app"><img src="https://github.com/nunogois/bolt/blob/main/public/images/thumbnail.png?raw=true" height="450" /></a>
 <p>
 
 Bolt is a very simple Twitter-like app, cross-platform and open-source, built using:
@@ -9,4 +9,4 @@ Bolt is a very simple Twitter-like app, cross-platform and open-source, built us
   Firebase Alternative;
 - [Unleash](https://www.getunleash.io/) - Open-source Feature Management Service that allows you to manage your feature roll-out like a pro.
 
-Check out Bolt here: https://bolt.vercel.app/
+Check out Bolt here: https://bolt-dev.vercel.app/
