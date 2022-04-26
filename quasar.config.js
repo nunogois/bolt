@@ -63,7 +63,12 @@ module.exports = configure(function (/* ctx */) {
 
       // publicPath: '/',
       // analyze: true,
-      env: require('dotenv').config().parsed,
+      env: require('dotenv').config().parsed ?? {
+        SUPABASE_URL: process.env.SUPABASE_URL,
+        SUPABASE_KEY: process.env.SUPABASE_KEY,
+        UNLEASH_URL: process.env.UNLEASH_URL,
+        UNLEASH_KEY: process.env.UNLEASH_KEY
+      },
       // rawDefine: {}
       // ignorePublicFolder: true,
       // minify: false,
