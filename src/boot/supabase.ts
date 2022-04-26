@@ -19,7 +19,7 @@ export default boot(({ router, redirect }) => {
       const { id, email, user_metadata, updated_at } = user
       const { avatar_url, full_name, user_name } = user_metadata
       let result = await supabase.from('profiles').select().eq('id', id)
-      const preferences = result.data?.[0].preferences ?? store.preferences
+      const preferences = result.data?.[0]?.preferences ?? store.preferences
       if (!result.data?.length) {
         result = await supabase.from('profiles').insert([
           {

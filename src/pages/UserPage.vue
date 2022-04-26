@@ -133,7 +133,7 @@ const load = async (pageNumber: number, done: (stop: boolean) => void) => {
             <div class="q-pl-md user-card-info">
               <p class="q-mb-none text-h4">{{ user.full_name }}</p>
               <div class="row items-center justify-between">
-                <p class="q-mb-none text-subtitle1 text-grey-6">
+                <p class="q-mb-none text-subtitle1 text-grey-7">
                   @{{ user.user_name }}
                 </p>
                 <q-btn

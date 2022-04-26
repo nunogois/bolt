@@ -90,7 +90,7 @@ const done = () => {
             <img :src="session.user.avatar_url" />
           </q-avatar>
           <span class="text-h4 q-mt-sm">{{ session.user.full_name }}</span>
-          <span class="text-subtitle1 text-grey-6"
+          <span class="text-subtitle1 text-grey-7"
             >@{{ session.user.user_name }}</span
           >
           <p class="line-break q-mt-sm">
